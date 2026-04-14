@@ -102,8 +102,16 @@
       "importFrom": "/components/manual-header/macro.njk"
     },
     {
+      "macroName": "manualSectionTitle",
+      "importFrom": "/components/manual-sectionTitle/macro.njk"
+    },
+    {
       "macroName": "manualContents",
       "importFrom": "/components/manual-contents/macro.njk"
+    },
+    {
+      "macroName": "manualPrintLink",
+      "importFrom": "/components/manual-printLink/macro.njk"
     }
   ],
   "templates": [
@@ -123,8 +131,13 @@
       "type": "nunjucks"
     },
     {
-      "name": "Manual page",
-      "path": "/templates/manual_page.html",
+      "name": "Manual-GOVUK section",
+      "path": "/templates/manual_govuk_section.html",
+      "type": "nunjucks"
+    },
+    {
+      "name": "Manual-HMRC section",
+      "path": "/templates/manual_hmrc_section.html",
       "type": "nunjucks"
     }
   ]

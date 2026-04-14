@@ -1,0 +1,21 @@
+ <div class="govuk-grid-column-full">
+    <div id="section-title" class="gem-c-heading govuk-!-margin-bottom-4">
+        <h1 class="gem-c-heading__text govuk-heading-l">
+            {% if params.sectionTitle.heading %}
+                {{params.sectionTitle.heading}}
+            {% else %}
+                Enter the title of the section
+            {%endif%}
+        </h1>
+    </div>
+</div>
+        
+<div class="govuk-grid-column-two-thirds">
+    <p class="gem-c-lead-paragraph">
+        {% if params.sectionTitle.text %}
+            {{params.sectionTitle.text}}
+        {% else %}
+            Enter a brief description of the section.
+        {%endif%}
+    </p>
+</div>

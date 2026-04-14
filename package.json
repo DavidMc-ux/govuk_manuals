@@ -1,5 +1,5 @@
 {
-  "name": "Manuals",
+  "name": "govuk_manuals",
   "version": "1.0.0",
   "description": " This plugin provides the code to use the GOV.UK and HMRC manual page templates in prototypes.",
   "license": "ISC",

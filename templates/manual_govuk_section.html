@@ -1,0 +1,119 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Manual title - Page name - Guidance - GOV.UK
+{% endblock %}
+
+{# Blank header with no service name for this page #}
+{% block header %}
+<header>
+    {{govukHeader()}}
+</header>
+{% endblock %}
+
+{% block containerStart %}
+{{ govukBreadcrumbs({
+items: [
+{
+text: "Home",
+href: "#"
+},
+{
+text: "Section",
+href: "#"
+},
+{
+text: "Subsection"
+}
+]
+}) }}
+
+{% from "/components/manual-header/macro.njk" import manualHeader %}
+{{ manualHeader({
+manualTitle: 'Manual title',
+type: 'govuk',
+publishDate: '1 January 2026',
+updateDate: null
+}) }}
+
+
+{{ govukBreadcrumbs({
+classes: "gem-c-breadcrumbs gem-c-breadcrumbs--border-bottom govuk-!-margin-bottom-6",
+items: [
+{
+text: "Back to contents",
+href: "#"
+}
+]
+}) }}
+
+{% endblock %}
+
+
+
+{% block content %}
+
+
+
+<div id="manuals-frontend" class="govuk-grid-row">
+    <article aria-labelledby="section-title">
+        {% from "/components/manual-sectionTitle/macro.njk" import manualSectionTitle %}
+        {{ manualSectionTitle({
+        sectionTitle: {
+        heading: 'Section title',
+        text: 'This is a brief description of the section.'}
+        }) }}
+
+        <div class="govuk-grid-column-two-thirds">
+            <p class="govuk-body">
+                This is an optional area to add details about the section. It can include any components that are available in the prototype kit.
+            </p>
+
+            {% from "govuk/components/accordion/macro.njk" import govukAccordion %}
+
+            {{ govukAccordion({
+            id: "accordion-default",
+            items: [
+            {
+            heading: {
+            text: "Writing well for the web"
+            },
+            content: {
+            html: '<p class="govuk-body">This is the content for Writing well for the web.</p>'
+            }
+            },
+            {
+            heading: {
+            text: "Writing well for specialists"
+            },
+            content: {
+            html: '<p class="govuk-body">This is the content for Writing well for specialists.</p>'
+            }
+            },
+            {
+            heading: {
+            text: "Know your audience"
+            },
+            content: {
+            html: '<p class="govuk-body">This is the content for Know your audience.</p>'
+            }
+            },
+            {
+            heading: {
+            text: "How people read"
+            },
+            content: {
+            html: '<p class="govuk-body">This is the content for How people read.</p>'
+            }
+            }
+            ]
+            }) }}
+        </div>
+    </article>
+<div class="govuk-grid-column-two-thirds">
+    {% from "/components/manual-printLink/macro.njk" import manualPrintLink %}
+    {{ manualPrintLink() }}
+    </div>
+
+</div>
+{% endblock %}
