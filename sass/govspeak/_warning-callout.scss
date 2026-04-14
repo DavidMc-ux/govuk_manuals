@@ -1,0 +1,40 @@
+// Govspeak warning callout
+// https://components.publishing.service.gov.uk/component-guide/govspeak/warning_callout
+//
+// Support:
+//
+// - alphagov/whitehall: ✔︎
+// - alphagov/govspeak: ✔︎
+
+
+// stylelint-disable max-nesting-depth
+.govspeak, // Legacy class name that's still used in some content items - needs to be kept until `.govspeak` is removed from the content items.
+.gem-c-govspeak {
+  .help-notice {
+    $icon-size: 35px;
+    $icon-spacing: 10px;
+
+    padding: govuk-spacing(3) 0 0 calc($icon-size + $icon-spacing);
+    margin: 0 0 govuk-spacing(6) 0;
+    position: relative;
+
+    &::before {
+      content: "!";
+      @include govuk-typography-weight-bold($important: false);
+      @extend .govuk-warning-text__icon; // stylelint-disable-line scss/at-extend-no-missing-placeholder
+    }
+
+    p {
+      @include govuk-font($size: 19, $weight: bold);
+    }
+
+    @include govuk-media-query($media-type: print) {
+      margin: govuk-spacing(3) 0;
+
+      &::before {
+        background-color: govuk-colour("white");
+        color: $govuk-print-text-colour;
+      }
+    }
+  }
+}

@@ -1,0 +1,183 @@
+.gem-c-image-card {
+  position: relative;
+  margin-bottom: govuk-spacing(6);
+  display: flex;
+  display: -ms-flexbox;
+  flex-direction: column-reverse;
+  -ms-flex-direction: row-reverse;
+  gap: govuk-spacing(2);
+  justify-content: space-between;
+  align-items: stretch;
+  @include govuk-text-colour;
+
+  @include govuk-media-query($until: tablet) {
+    flex-direction: column-reverse;
+    gap: govuk-spacing(3);
+  }
+}
+
+.gem-c-image-card__text-wrapper {
+  flex-grow: 1;
+  flex-basis: 50%;
+}
+
+.gem-c-image-card__image-wrapper {
+  flex-grow: 1;
+  flex-basis: 50%;
+  margin: 0;
+
+  @include govuk-media-query($from: tablet) {
+    height: 100%;
+  }
+}
+
+.gem-c-image-card__image {
+  display: block;
+  height: auto;
+  width: 100%;
+  border: 0;
+  border-top: 1px solid $govuk-border-colour;
+}
+
+.gem-c-image-card__title {
+  margin: 0;
+}
+
+.gem-c-image-card__title-link {
+  &:focus {
+    text-decoration: none;
+  }
+
+  // the after element extends the link to cover the image, removing the
+  // need for a duplicate link. Other elements apart from the image are given
+  // position relative and a higher z-index to put them above the after element
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+  }
+}
+
+.gem-c-image-card__context,
+.gem-c-image-card__metadata,
+.gem-c-image-card__description {
+  position: relative;
+  z-index: 2;
+}
+
+.gem-c-image-card__context,
+.gem-c-image-card__metadata {
+  font-size: 16px;
+  font-size: govuk-px-to-rem(16px);
+  margin: 0 0 calc(govuk-spacing(3) / 2);
+  color: govuk-colour("dark-grey");
+  @include govuk-font($size: false);
+
+  @include govuk-media-query($from: tablet) {
+    margin-bottom: 0;
+  }
+}
+
+.gem-c-image-card__description {
+  padding-top: calc(govuk-spacing(3) / 2);
+  word-wrap: break-word;
+  @include govuk-font($size: 19);
+}
+
+.gem-c-image-card__list {
+  position: relative;
+  z-index: 2;
+  padding: calc(govuk-spacing(3) / 2) 0 0 0;
+  margin: 0;
+  list-style: none;
+  @include govuk-font($size: 19);
+
+  .gem-c-image-card__list-item {
+    margin-bottom: govuk-spacing(2);
+  }
+
+  .gem-c-image-card__list-item--text {
+    color: govuk-colour("dark-grey");
+  }
+
+  .gem-c-image-card__list-item-link {
+    line-height: 1.35em;
+  }
+
+  &.gem-c-image-card__list--indented {
+    padding-left: govuk-spacing(3);
+
+    .gem-c-image-card__list-item {
+      position: relative;
+
+      &::before { // stylelint-disable-line max-nesting-depth
+        content: "-";
+        position: absolute;
+        left: (- govuk-spacing(3));
+      }
+    }
+  }
+}
+
+.gem-c-image-card--two-thirds {
+  flex-direction: row-reverse;
+  gap: govuk-spacing(3);
+
+  .gem-c-image-card__text-wrapper {
+    flex: 1 1 70%;
+  }
+
+  .gem-c-image-card__image-wrapper {
+    flex: 0 0 80px;
+  }
+
+  .gem-c-image-card__image {
+    border-top: none;
+  }
+
+  @include govuk-media-query($until: mobile) {
+    flex-direction: column-reverse;
+  }
+}
+
+.gem-c-image-card--large {
+  flex-direction: column-reverse;
+  gap: govuk-spacing(2);
+
+  @include govuk-media-query($from: tablet) {
+    flex-direction: row-reverse;
+    gap: govuk-spacing(5);
+  }
+
+  .gem-c-image-card__title {
+    padding-bottom: govuk-spacing(2);
+  }
+
+  .gem-c-image-card__title-link::after {
+    left: 0;
+    right: 0;
+  }
+
+  .gem-c-image-card__description {
+    @include govuk-font(19);
+  }
+}
+
+// stylelint-disable declaration-no-important
+@include govuk-media-query($media-type: print) {
+  .gem-c-image-card__title[class*="govuk-heading-"] {
+    font-size: 16pt;
+  }
+
+  .gem-c-image-card__title-link {
+    &::after {
+      position: static;
+    }
+  }
+}
+// stylelint-enable declaration-no-important

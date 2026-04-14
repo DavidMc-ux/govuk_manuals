@@ -1,0 +1,55 @@
+// stylelint-disable max-nesting-depth
+
+$highlight-answer-bg-color: govuk-colour("green");
+$highlight-answer-color: govuk-colour("white");
+
+.govspeak, // Legacy class name that's still used in some content items - needs to be kept until `.govspeak` is removed from the content items.
+.gem-c-govspeak {
+  .highlight-answer {
+    background-color: $highlight-answer-bg-color;
+    color: $highlight-answer-color;
+    text-align: center;
+    padding: govuk-spacing(5) govuk-spacing(2) govuk-spacing(4);
+    margin: 0 0 govuk-spacing(4);
+
+    p {
+      color: $highlight-answer-color;
+      @include govuk-font($size: 24, $weight: bold);
+
+      em {
+        display: block;
+        padding-top: govuk-spacing(2);
+        color: $highlight-answer-color;
+        @include govuk-font($size: 80, $weight: bold);
+      }
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+
+    @include govuk-media-query($until: tablet) {
+      @include govuk-font($size: 48);
+
+      p {
+        font-size: 1em;
+        line-height: inherit;
+
+        em {
+          font-size: 1em;
+          padding-top: 0;
+          display: inline;
+        }
+      }
+    }
+
+    @include govuk-media-query($media-type: print) {
+      background: none;
+
+      &,
+      & * {
+        color: $govuk-print-text-colour !important; // stylelint-disable-line declaration-no-important
+      }
+    }
+  }
+}

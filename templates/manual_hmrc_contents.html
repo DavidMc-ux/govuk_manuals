@@ -1,0 +1,67 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Manual name - HMRC internal manual - GOV.UK
+{% endblock %}
+
+
+
+{# Blank header with no service name for this page #}
+{% block header %}
+<header>
+    {{govukHeader()}}
+</header>
+{% endblock %}
+
+{% block containerStart %}
+{{ govukBreadcrumbs({
+items: [
+{
+text: "Home",
+href: "#"
+},
+{
+text: "Section",
+href: "#"
+},
+{
+text: "Subsection"
+}
+]
+}) }}
+
+{% from "/components/manual-header/macro.njk"  import manualHeader %}
+{{ manualHeader({
+  manualTitle: 'Interaction design manual',
+  type: 'hmrc',
+  publishDate: '1 January 2026',
+  updateDate: null
+}) }}
+
+{% endblock %}
+
+
+
+{% block content %}
+
+{% from "/components/manual-contents/macro.njk"  import manualContents %}
+{{ manualContents({
+  type: 'hmrc',
+  summary: 'Making Tax Digital (MTD) is a government initiative designed to make it easier for individuals and businesses to manage their tax affairs digitally.',
+  summaryDetail: null,
+
+  items:[
+    {
+      id:'IDM1000',
+      linkText: 'David heading',
+      linkURL: '/guidance/making-tax-digital/1-overview'
+    },
+    {
+      id:'IDM2000',
+      linkText: '2. Who needs to comply with MTD?',
+      linkURL: '/guidance/making-tax-digital/2-who-needs-to-comply'
+    }
+  ]
+}) }}
+
+{% endblock %}

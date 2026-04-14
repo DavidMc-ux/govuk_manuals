@@ -1,0 +1,19 @@
+
+.gem-c-panel__prepend {
+  margin-bottom: govuk-spacing(3);
+  @include govuk-font($size: 24, $weight: bold);
+}
+
+.gem-c-panel__append {
+  @include govuk-font($size: 24, $weight: bold);
+}
+
+.gem-c-panel__prepend ~ .govuk-panel__title-text {
+  margin-bottom: govuk-spacing(3);
+}
+
+.gem-c-panel__append,
+.gem-c-panel__prepend,
+.govuk-panel__title-text {
+  display: block;
+}

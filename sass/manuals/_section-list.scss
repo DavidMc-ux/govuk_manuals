@@ -1,0 +1,91 @@
+.section-list {
+    margin: 0;
+    padding: 0;
+    margin-top: 30px;
+    padding-bottom: 30px
+}
+
+@media(min-width: 40.0625em) {
+    .section-list .title-wrap {
+        display:table-row
+    }
+
+    .section-list .title-wrap div {
+        display: table-cell
+    }
+}
+
+.section-list .subsection-id {
+    color: #505a5f;
+    min-width: 135px;
+    padding-right: 15px
+}
+
+.section-list-item {
+    border-top: 1px solid #b1b4b6;
+    list-style: none;
+    font-family: "GDS Transport",arial,sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 400;
+    font-size: 1.1875rem;
+    line-height: 1.3157894737
+}
+
+@media print {
+    .section-list-item {
+        font-family: sans-serif
+    }
+}
+
+@media print {
+    .section-list-item {
+        font-size: 14pt;
+        line-height: 1.15
+    }
+}
+
+.section-list-item:hover {
+    background-color: #f3f2f1
+}
+
+.section-list-item:last-child {
+    border-bottom: 1px solid #b1b4b6
+}
+
+.section-link {
+    display: block;
+    padding: 10px 0;
+    text-decoration: none
+}
+
+.section-link .subsection-title-text {
+    display: block;
+    font-weight: 700;
+    text-decoration: underline;
+    text-decoration-thickness: max(1px, .0625rem);
+    text-underline-offset: .1578em
+}
+
+.section-link .subsection-summary {
+    color: #0b0c0c;
+    display: block
+}
+
+.section-link:hover .subsection-title-text {
+    text-decoration-thickness: max(3px, .1875rem, .12em);
+    -webkit-text-decoration-skip-ink: none;
+    text-decoration-skip-ink: none;
+    -webkit-text-decoration-skip: none;
+    text-decoration-skip: none
+}
+
+.subsection-collection {
+    margin-top: 15px
+}
+
+@media(min-width: 40.0625em) {
+    .subsection-collection {
+        margin-top:30px
+    }
+}

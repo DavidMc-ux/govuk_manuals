@@ -1,0 +1,22 @@
+
+// stylelint-disable declaration-no-important
+@include govuk-media-query($media-type: print) {
+  .gem-c-success-alert {
+    break-inside: avoid;
+    background: none;
+    border-color: $govuk-print-text-colour;
+
+    * {
+      color: $govuk-print-text-colour !important;
+    }
+
+    .govuk-notification-banner__header {
+      border-bottom: 1pt solid $govuk-print-text-colour;
+    }
+
+    .govuk-notification-banner__title {
+      padding: 2mm 0;
+    }
+  }
+}
+// stylelint-enable declaration-no-important

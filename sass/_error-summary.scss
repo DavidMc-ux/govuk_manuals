@@ -1,0 +1,5 @@
+
+.gem-c-error-summary__list-item {
+  color: $govuk-error-colour;
+  @include govuk-font($size: 19, $weight: bold);
+}

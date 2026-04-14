@@ -1,0 +1,77 @@
+<div aria-labelledby="manual-title"
+
+    class="gem-c-inverse-header gem-c-inverse-header--html-publication-header govuk-!-padding-top-6 {% if params.type=='hmrc' %}gem-c-inverse-header--hmrc-header{%endif%} govuk-!-margin-bottom-4">
+    <div class="govuk-grid-row">
+        <div class='govuk-grid-column-two-thirds'>
+
+            <div id="manual-title" class="gem-c-heading  gem-c-heading--inverse govuk-!-margin-bottom-8">
+{% if params.type=='hmrc' %}
+<span class="govuk-caption-xl gem-c-heading__context">
+    HMRC internal manual
+  </span>
+{%endif%}
+                <h1 class="gem-c-heading__text govuk-heading-l">
+                {%- if params.manualTitle -%}
+                    {{params.manualTitle}}
+                    {% else %}
+                    Enter a title
+                    {%endif%}
+                </h1>
+            </div>
+
+            <div data-module="metadata" class="gem-c-metadata gem-c-metadata--inverse">
+                <dl class="gem-c-metadata__list">
+                    <dt class="gem-c-metadata__term">From:</dt>
+                    <dd class="gem-c-metadata__definition" data-module="gem-toggle">
+                        <a href='https://www.gov.uk/government/organisations/hm-revenue-customs' class='govuk-link'>HM Revenue and Customs</a>
+
+                    </dd>
+                    <dt class="gem-c-metadata__term">Published</dt>
+                    <dd class="gem-c-metadata__definition">{% if params.publishDate%}{{params.publishDate}}{%else%} 1 January 2026 {%endif%}</dd>
+                    {%if params.updateDate%}
+                    <dt class="gem-c-metadata__term">Updated:</dt>
+                    <dd class="gem-c-metadata__definition">{{params.updateDate}} -
+                    <a href='#' class='govuk-link'>See all updates</a></dd>
+                    {%endif%}
+                </dl>
+            </div>
+
+            <div class="in-manual-search">
+                <form action="/search/all" data-module="ga4-form-tracker" data-ga4-form-no-answer-undefined=""
+                    data-ga4-form-include-text=""
+                    data-ga4-form='{"event_name":"search","type":"content","section":"Convert to an academy: guide for schools ","action":"search","url":"/search/all"}'>
+                    <input type='hidden' name="manual[]"
+                        value="/guidance/convert-to-an-academy-information-for-schools">
+                    <div data-module="gem-toggle-input-class-on-focus"
+                        class="gem-c-search govuk-!-display-none-print gem-c-search--on-govuk-blue govuk-!-margin-bottom-6">
+                        <label for="search-main-7c62aa48" class="gem-c-search__label">Search this manual</label>
+                        <div class="gem-c-search__item-wrapper">
+                            <div class="js-search-input-wrapper">
+                                <input enterkeyhint="search"
+                                    class="gem-c-search__item gem-c-search__input js-class-toggle"
+                                    id="search-main-7c62aa48" name="q" title="Search" type="search" value="">
+                            </div>
+                            <div class="gem-c-search__item gem-c-search__submit-wrapper">
+                                <button class="gem-c-search__submit" type="submit" enterkeyhint="search">
+                                    Search
+
+                                    <svg class="gem-c-search__icon" width="27" height="27" viewBox="0 0 27 27"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                                        focusable="false">
+                                        <circle cx="12.0161" cy="11.0161" r="8.51613" stroke="currentColor"
+                                            stroke-width="3" />
+                                        <line x1="17.8668" y1="17.3587" x2="26.4475" y2="25.9393" stroke="currentColor"
+                                            stroke-width="3" />
+                                    </svg>
+
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+</div>

@@ -1,0 +1,46 @@
+// Govspeak footnotes callout
+// https://components.publishing.service.gov.uk/component-guide/govspeak/footnotes
+//
+// Support:
+//
+// This appears to be built into kramdown, we're just applying styling to it.
+// https://kramdown.gettalong.org/syntax.html#footnotes
+//
+// - alphagov/whitehall: ✔︎
+// - alphagov/govspeak: ✔︎
+
+// stylelint-disable max-nesting-depth
+
+.govspeak, // Legacy class name that's still used in some content items - needs to be kept until `.govspeak` is removed from the content items.
+.gem-c-govspeak {
+  .footnotes {
+    border-top: 1px solid govuk-colour("mid-grey");
+    margin: 0 0 govuk-spacing(4) 0;
+    padding-top: govuk-spacing(4);
+
+    a {
+      overflow-wrap: break-word;
+    }
+
+    ol li:nth-of-type(99) ~ li {
+      margin-left: 11px;
+    }
+
+    ol li:nth-of-type(999) ~ li {
+      margin-left: 22px;
+    }
+
+    li:target {
+      background: govuk-colour("light-grey");
+      border-bottom: solid 3px $govuk-border-colour;
+    }
+
+    @include govuk-media-query($media-type: print) {
+      border-top: 1px solid $govuk-text-colour;
+
+      a[role="doc-backlink"] {
+        display: none;
+      }
+    }
+  }
+}

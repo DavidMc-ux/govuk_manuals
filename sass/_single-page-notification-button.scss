@@ -1,0 +1,38 @@
+.gem-c-single-page-notification-button__submit {
+  padding: govuk-spacing(2);
+  margin: govuk-spacing(0);
+  border: 1px solid govuk-colour("dark-grey");
+  color: $govuk-link-colour;
+  cursor: pointer;
+  background: none;
+  @include govuk-font(16);
+
+  &:focus {
+    border-color: transparent;
+    @include govuk-focused-text;
+  }
+
+  &:hover {
+    background-color: govuk-colour("light-grey");
+    color: $govuk-link-hover-colour;
+
+    &:focus {
+      color: $govuk-text-colour;
+      box-shadow: 0 $govuk-focus-width $govuk-text-colour;
+    }
+  }
+}
+
+.gem-c-single-page-notification-button__icon {
+  color: govuk-colour("black");
+  vertical-align: top;
+  margin-right: govuk-spacing(1);
+}
+
+.govuk-frontend-supported .gem-c-single-page-notification-button.js-personalisation-enhancement {
+  opacity: 0;
+
+  &.gem-c-single-page-notification-button--visible {
+    opacity: 1;
+  }
+}

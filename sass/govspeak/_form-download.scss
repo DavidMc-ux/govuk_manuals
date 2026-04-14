@@ -1,0 +1,20 @@
+.govspeak, // Legacy class name that's still used in some content items - needs to be kept until `.govspeak` is removed from the content items.
+.gem-c-govspeak {
+  .form-download {
+    margin: 0 0 govuk-spacing(4) 0;
+
+    p {
+      padding-right: 3em;
+    }
+
+    a {
+      display: block;
+      font-weight: 600;
+      background-image: url("govuk_publishing_components/icon-file-download.svg");
+      background-repeat: no-repeat;
+      background-size: 40px 40px;
+      min-height: 2.5em;
+      padding: 0 0 0 50px;
+    }
+  }
+}

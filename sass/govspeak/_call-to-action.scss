@@ -1,0 +1,24 @@
+// Govspeak call to action
+// https://components.publishing.service.gov.uk/component-guide/govspeak/call_to_action
+//
+// Support:
+//
+// - alphagov/whitehall: ✔︎
+// - alphagov/govspeak: ✔︎
+
+.govspeak, // Legacy class name that's still used in some content items - needs to be kept until `.govspeak` is removed from the content items.
+.gem-c-govspeak {
+  .call-to-action {
+    margin: 0 0 govuk-spacing(4) 0;
+    background-color: govuk-colour("light-grey");
+    padding: govuk-spacing(6);
+    padding-bottom: govuk-spacing(2);
+
+    @include govuk-media-query($media-type: print) {
+      background: none;
+      border: 1pt solid $govuk-border-colour;
+      padding: govuk-spacing(3);
+      margin: govuk-spacing(3) 0;
+    }
+  }
+}

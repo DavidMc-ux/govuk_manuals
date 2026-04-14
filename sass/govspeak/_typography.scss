@@ -1,0 +1,103 @@
+// Govspeak typography
+// https://components.publishing.service.gov.uk/component-guide/govspeak/heading_levels
+// https://components.publishing.service.gov.uk/component-guide/govspeak/lists
+// https://components.publishing.service.gov.uk/component-guide/govspeak/nested_lists
+// https://components.publishing.service.gov.uk/component-guide/govspeak/blockquote
+//
+// Support:
+// - alphagov/whitehall: ✔︎
+// - alphagov/govspeak: ✔︎
+
+// stylelint-disable max-nesting-depth
+@import "../helpers/markdown-typography";
+
+.govspeak, // Legacy class name that's still used in some content items - needs to be kept until `.govspeak` is removed from the content items.
+.gem-c-govspeak {
+  @include markdown-typography;
+
+  &.gem-c-govspeak--direction-rtl ol,
+  &.gem-c-govspeak--direction-rtl ul {
+    margin-left: 0;
+    margin-right: govuk-spacing(4);
+
+    a {
+      overflow-wrap: break-word;
+    }
+
+    ul,
+    ol {
+      margin-bottom: 0;
+    }
+  }
+
+  // Block quotes
+
+  blockquote {
+    padding: 0 0 0 govuk-spacing(6);
+    margin: 0 0 govuk-spacing(4) 0;
+    border: 0;
+
+    p {
+      position: relative;
+
+      &::before {
+        content: "\201C";
+        position: absolute;
+        right: 100%;
+      }
+
+      &:last-of-type::after {
+        content: "\201D";
+      }
+    }
+  }
+
+  &.gem-c-govspeak--direction-rtl blockquote {
+    padding: 0 govuk-spacing(6) 0 0;
+
+    p {
+      &::before {
+        content: "\201D";
+        right: auto;
+        left: 100%;
+      }
+
+      &:last-child::after {
+        content: "\201C";
+      }
+    }
+  }
+
+  // Text styles
+
+  em,
+  i {
+    font-style: normal;
+    font-weight: inherit;
+  }
+
+  @include govuk-media-query($media-type: print) {
+    a[href^="/"]:after,a[href^="http://"]:after,a[href^="https://"]:after {
+      content: " (" attr(href) ")";
+      font-size: 90%;
+      word-wrap: break-word;
+    }
+  }
+}
+
+.gem-c-govspeak--inverse {
+  color: govuk-colour("white");
+
+  a {
+    @include govuk-link-common;
+    @include govuk-link-style-inverse;
+  }
+
+  @include govuk-media-query($media-type: print) {
+    color: $govuk-print-text-colour;
+
+    a:link {
+      color: $govuk-print-text-colour;
+    }
+  }
+}

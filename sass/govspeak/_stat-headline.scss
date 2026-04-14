@@ -1,0 +1,23 @@
+// Govspeak statistic headline
+// https://components.publishing.service.gov.uk/component-guide/govspeak/statistic_headlines
+//
+// Support:
+// - alphagov/whitehall: ✔︎
+// - alphagov/govspeak: ✔︎
+
+.govspeak, // Legacy class name that's still used in some content items - needs to be kept until `.govspeak` is removed from the content items.
+.gem-c-govspeak {
+  .stat-headline {
+    margin: 0 0 govuk-spacing(4) 0;
+
+    p {
+      margin: 0;
+      @include govuk-font($size: 19, $weight: bold);
+    }
+
+    em {
+      display: block;
+      @include govuk-font($size: 80, $weight: bold);
+    }
+  }
+}

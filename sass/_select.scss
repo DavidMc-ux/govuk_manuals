@@ -1,0 +1,11 @@
+
+// Increase height of selects that have a `multiple`
+// attribute otherwise they are too small to be useful.
+.govuk-select[multiple] {
+  height: auto;
+}
+
+.gem-c-select__select--full-width {
+  min-width: 100%;
+  max-width: 100%;
+}

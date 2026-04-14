@@ -1,0 +1,49 @@
+// Govspeak media player
+// https://components.publishing.service.gov.uk/component-guide/govspeak/with_youtube_embed
+//
+// Support:
+// - alphagov/whitehall: ✔︎
+// - alphagov/govspeak: ✔︎
+
+.gem-c-govspeak__youtube-video {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  margin: 0 0 govuk-spacing(4) 0;
+  padding-top: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 56.25%;
+}
+
+.gem-c-govspeak__youtube-video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+@include govuk-media-query($media-type: print) {
+  .gem-c-govspeak__youtube-video {
+    break-inside: avoid;
+  }
+}
+
+.gem-c-govspeak__youtube-placeholder {
+  position: relative;
+  padding: govuk-spacing(6);
+  padding-bottom: govuk-spacing(8);
+  background: govuk-colour("light-grey");
+  border: solid 2px $govuk-border-colour;
+}
+
+.gem-c-govspeak__youtube-placeholder-text {
+  display: block;
+  margin-bottom: govuk-spacing(2);
+}
+
+.gem-c-govspeak__youtube-placeholder-link {
+  display: none;
+}

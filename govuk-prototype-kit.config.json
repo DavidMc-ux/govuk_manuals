@@ -1,0 +1,131 @@
+{
+  "pluginDependencies": [
+    {
+      "packageName": "govuk-frontend",
+      "minVersion": "6.0.0"
+    }
+  ],
+   "assets": [
+    "/images/"
+  ],
+  "sass": [
+    "/sass/manuals/section-list",
+    "/sass/helpers/brand-colours",
+    "/sass/helpers/colours",
+    "/sass/mixins/grid-helper",
+    "/sass/mixins/index",
+    "/sass/mixins/margins",
+    "/sass/mixins/prefixed-transform",
+    "/sass/mixins/scale",
+    "/sass/action-link",
+    "/sass/add-another",
+    "/sass/app-promo-banner",
+    "/sass/attachment",
+    "/sass/attachment-link",
+    "/sass/back-to-top-link",
+    "/sass/big-number",
+    "/sass/breadcrumbs",
+    "/sass/button",
+    "/sass/cards",
+    "/sass/checkboxes",
+    "/sass/contents-list",
+    "/sass/contents-list-with-body",
+    "/sass/contextual-guidance",
+    "/sass/contextual-sidebar",
+    "/sass/cookie-banner",
+    "/sass/cross-service-header",
+    "/sass/details",
+    "/sass/devolved-nations",
+    "/sass/document-list",
+    "/sass/emergency-banner",
+    "/sass/error-alert",
+    "/sass/error-summary",
+    "/sass/feedback",
+    "/sass/figure",
+    "/sass/glance-metric",
+    "/sass/global-banner",
+    "/sass/govspeak-html-publication",
+    "/sass/govspeak",
+    "/sass/heading",
+    "/sass/image-card",
+    "/sass/input",
+    "/sass/inset-text",
+    "/sass/intervention",
+    "/sass/inverse-header",
+    "/sass/layout-footer",
+    "/sass/layout-for-public",
+    "/sass/layout-header",
+    "/sass/layout-super-navigation-header",
+    "/sass/lead-paragraph",
+    "/sass/metadata",
+    "/sass/modal-dialogue",
+    "/sass/notice",
+    "/sass/option-select",
+    "/sass/organisation-logo",
+    "/sass/panel",
+    "/sass/phase-banner",
+    "/sass/pagination",
+    "/sass/print-link",
+    "/sass/published-dates",
+    "/sass/radio",
+    "/sass/related-navigation",
+    "/sass/reorderable-list",
+    "/sass/search",
+    "/sass/search-with-autocomplete",
+    "/sass/secondary-navigation",
+    "/sass/select",
+    "/sass/service-navigation",
+    "/sass/share-links",
+    "/sass/signup-link",
+    "/sass/single-page-notification-button",
+    "/sass/step-by-step-nav-header",
+    "/sass/step-by-step-nav-related",
+    "/sass/step-by-step-nav",
+    "/sass/subscription-links",
+    "/sass/success-alert",
+    "/sass/summary-banner",
+    "/sass/summary-card",
+    "/sass/summary-list",
+    "/sass/tabs",
+    "/sass/table",
+    "/sass/tag",
+    "/sass/textarea",
+    "/sass/translation-nav",
+    "/sass/warning-text"
+  ],
+    "nunjucksPaths": [
+    "/"
+  ],
+  "nunjucksMacros": [
+    {
+      "macroName": "manualHeader",
+      "importFrom": "/components/manual-header/macro.njk"
+    },
+    {
+      "macroName": "manualContents",
+      "importFrom": "/components/manual-contents/macro.njk"
+    }
+  ],
+  "templates": [
+    {
+      "name": "Detailed guide",
+      "path": "/templates/detailed_guide.html",
+      "type": "nunjucks"
+    },
+    {
+      "name": "Manual-GOVUK contents",
+      "path": "/templates/manual_govuk_contents.html",
+      "type": "nunjucks"
+    },
+     {
+      "name": "Manual-HMRC contents",
+      "path": "/templates/manual_hmrc_contents.html",
+      "type": "nunjucks"
+    },
+    {
+      "name": "Manual page",
+      "path": "/templates/manual_page.html",
+      "type": "nunjucks"
+    }
+  ]
+}

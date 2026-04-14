@@ -1,0 +1,177 @@
+// Default logo corresponds with the "medium stacked" Whitehall equivalent
+.gem-c-organisation-logo {
+  font-weight: 400;
+  // When this is a heading the margin needs to be set to stop it from
+  // inheriting the browser's default margin:
+  margin: 0;
+  @include govuk-typography-common;
+  @include govuk-font-size(19);
+
+  @include govuk-media-query($until: tablet) {
+    // only override line-height on small screens otherwise use govuk-font-size
+    // line-height
+    line-height: 1.35;
+  }
+}
+
+.gem-c-organisation-logo__container {
+  text-transform: none;
+  text-decoration: none;
+  display: block;
+  color: govuk-colour("black");
+  height: auto;
+  width: auto;
+
+  // Logo direction never changes, even for rtl content.
+  direction: ltr;
+}
+
+.gem-c-organisation-logo__container--inline {
+  display: inline-block;
+  padding-right: govuk-spacing(1);
+}
+
+.gem-c-organisation-logo__image {
+  display: block;
+  height: auto;
+  max-width: 300px;
+  width: 100%;
+}
+
+.gem-c-organisation-logo__crest {
+  // Default brand colour
+  border-left: 2px solid govuk-colour("black");
+  padding-top: 35px;
+  padding-left: 8px;
+
+  .brand--executive-office & {
+    border-left-width: 0;
+    padding-left: 0;
+    background-position: 0 0;
+  }
+}
+
+.gem-c-organisation-logo__name {
+  font-family: HelveticaNeue, "Helvetica Neue", Arial, Helvetica, sans-serif;
+}
+
+.gem-c-organisation-logo__link {
+  @include govuk-link-common;
+  @include govuk-link-style-text;
+
+  & { // stylelint-disable-line no-duplicate-selectors
+    // overriding the govuk-link font
+    font-family: HelveticaNeue, "Helvetica Neue", Arial, Helvetica, sans-serif;
+  }
+
+  &:hover {
+    color: $govuk-link-hover-colour;
+  }
+
+  &:active {
+    color: govuk-colour("black");
+    @include govuk-link-hover-decoration;
+  }
+
+  &:focus {
+    // Using `@include govuk-focused-text;` would obscure the text. Tweaked
+    // spacing needed to prevent overlap of the text and the focus state's thick
+    // black line.
+    box-shadow: 0 -2px $govuk-focus-colour, 0 4px $govuk-focus-colour, 0 8px $govuk-focus-text-colour;
+    text-decoration: none;
+  }
+}
+
+.gem-c-organisation-logo__link-hide-underline:link:not(:hover) {
+  text-decoration: none;
+}
+
+.gem-c-organisation-logo--inverse {
+  .gem-c-organisation-logo__container {
+    border-color: govuk-colour("white");
+    @include govuk-link-style-inverse;
+  }
+
+  .gem-c-organisation-logo__crest {
+    filter: brightness(0) invert(1);
+
+    &:focus {
+      filter: none;
+    }
+  }
+}
+
+@mixin crest($crest, $xpos:0, $ypos:0) {
+  background: url("/plugin-assets/govuk_manuals/images/govuk_publishing_components/crests/#{$crest}_18px_x2.png") no-repeat $xpos $ypos;
+  background-size: auto 32px;
+}
+
+@mixin tall-crest {
+  padding-top: 39px;
+  background-size: auto 34px;
+}
+
+.gem-c-organisation-logo__crest--dbt {
+  @include crest($crest: "dbt_crest", $xpos: 9px);
+}
+
+.gem-c-organisation-logo__crest--bis {
+  @include crest($crest: "bis_crest", $xpos: 9px);
+}
+
+.gem-c-organisation-logo__crest--gds {
+  @include crest($crest: "gds_crest", $xpos: 8px);
+}
+
+.gem-c-organisation-logo__crest--hmrc {
+  @include crest($crest: "hmrc_crest", $xpos: 8px);
+}
+
+.gem-c-organisation-logo__crest--ho {
+  @include crest($crest: "ho_crest", $xpos: 9px);
+  @include tall-crest;
+}
+
+.gem-c-organisation-logo__crest--mod {
+  @include crest($crest: "mod_crest", $xpos: 9px);
+  @include tall-crest;
+}
+
+.gem-c-organisation-logo__crest--no10 {
+  @include crest("no10_crest", $xpos: 8px);
+}
+
+.gem-c-organisation-logo__crest--single-identity,
+.gem-c-organisation-logo__crest--eo,
+.gem-c-organisation-logo__crest--org {
+  @include crest($crest: "org_crest", $xpos: 8px);
+}
+
+.gem-c-organisation-logo__crest--portcullis {
+  @include crest($crest: "portcullis", $xpos: 9px);
+}
+
+.gem-c-organisation-logo__crest--so {
+  @include crest($crest: "so_crest", $xpos: 9px);
+}
+
+.gem-c-organisation-logo__crest--ukaea {
+  @include crest($crest: "ukaea_crest", $xpos: 9px);
+}
+
+.gem-c-organisation-logo__crest--ukho {
+  @include crest($crest: "ukho", $xpos: 8px);
+  @include tall-crest;
+}
+
+.gem-c-organisation-logo__crest--wales {
+  @include crest($crest: "wales_crest", $xpos: 9px);
+  @include tall-crest;
+}
+
+@include govuk-media-query($media-type: print) {
+  .gem-c-organisation-logo__container {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+}

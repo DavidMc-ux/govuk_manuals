@@ -1,0 +1,108 @@
+// Govspeak tables
+// https://components.publishing.service.gov.uk/component-guide/govspeak/tables
+//
+// Support:
+// - alphagov/whitehall: ✔︎
+// - alphagov/govspeak: ✔︎
+
+.govspeak, // Legacy class name that's still used in some content items - needs to be kept until `.govspeak` is removed from the content items.
+.gem-c-govspeak {
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    display: block;
+    margin: 0 0 govuk-spacing(6) 0;
+    overflow-x: auto;
+    width: 100%;
+    @include govuk-font($size: 19);
+
+    caption {
+      text-align: left;
+      margin-bottom: .5em;
+    }
+
+    th,
+    td {
+      vertical-align: top;
+      padding: govuk-spacing(2) govuk-spacing(4) govuk-spacing(2) 0;
+      border-bottom: 1px solid govuk-colour("mid-grey");
+
+      &:last-child {
+        padding: govuk-spacing(2) 0 govuk-spacing(2) 0;
+      }
+    }
+
+    th {
+      text-align: left;
+      color: $govuk-text-colour;
+      @include govuk-font($size: 19, $weight: bold);
+    }
+
+    td small {
+      font-size: 19px;
+      font-size: govuk-px-to-rem(19);
+    }
+
+    .cell-text-left {
+      text-align: left;
+    }
+
+    .cell-text-center {
+      text-align: center;
+    }
+
+    .cell-text-right {
+      text-align: right;
+    }
+  }
+}
+
+// Add rtl table styling when `direction: "rtl"` is set
+.govuk-govspeak.gem-c-govspeak--direction-rtl,
+.gem-c-govspeak.gem-c-govspeak--direction-rtl {
+  table {
+    caption {
+      text-align: right;
+    }
+
+    th {
+      text-align: right;
+    }
+
+    th,
+    td {
+      padding: govuk-spacing(2) 0 govuk-spacing(2) govuk-spacing(4);
+    }
+  }
+}
+
+// Add rtl table styling when `.direction-rtl` is set on a parent element
+// stylelint-disable max-nesting-depth
+.gem-c-govspeak--direction-rtl {
+  .govspeak,
+  .gem-c-govspeak {
+    table {
+      caption {
+        text-align: right;
+      }
+
+      th {
+        text-align: right;
+      }
+
+      th,
+      td {
+        padding: govuk-spacing(2) 0 govuk-spacing(2) govuk-spacing(4);
+      }
+    }
+  }
+}
+
+@include govuk-media-query($media-type: print) {
+  .govspeak,
+  .gem-c-govspeak {
+    table a::after {
+      display: none !important; // stylelint-disable-line declaration-no-important
+    }
+  }
+}

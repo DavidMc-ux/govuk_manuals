@@ -1,0 +1,26 @@
+$gap: govuk-spacing(1);
+
+.gem-c-figure {
+  margin: 0;
+  display: table;
+
+  &:has(img[src*=".svg"]) {
+    width: 100%;
+  }
+}
+
+.gem-c-figure__image {
+  max-width: 100%;
+  display: table-row;
+}
+
+.gem-c-figure__figcaption {
+  display: table-caption;
+  caption-side: bottom;
+}
+
+.gem-c-figure__figcaption-text {
+  margin: govuk-spacing(2) 0 0 0;
+  color: $govuk-secondary-text-colour;
+  @include govuk-font(19);
+}

@@ -1,0 +1,41 @@
+
+.gem-c-summary-list {
+  margin-bottom: govuk-spacing(6);
+  @include govuk-font(19);
+
+  .govuk-summary-list {
+    margin-bottom: 0;
+  }
+}
+
+.gem-c-summary-list__group-title {
+  @include govuk-media-query($from: tablet) {
+    display: inline-block;
+    margin-right: govuk-spacing(3);
+  }
+}
+
+.gem-c-summary-list__group-actions-list {
+  margin-bottom: govuk-spacing(3);
+
+  @include govuk-media-query($from: tablet) {
+    float: right;
+    width: auto;
+  }
+}
+
+.gem-c-summary__block {
+  @include govuk-responsive-margin(6, "bottom");
+}
+
+.gem-c-summary-list--wide-title {
+  @include govuk-media-query($from: "tablet") {
+    .govuk-summary-list__key {
+      width: 60%;
+    }
+
+    .govuk-summary-list__value {
+      width: 20%;
+    }
+  }
+}

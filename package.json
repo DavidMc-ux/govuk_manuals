@@ -1,0 +1,12 @@
+{
+  "name": "Manuals",
+  "version": "1.0.0",
+  "description": " This plugin provides the code to use the GOV.UK and HMRC manual page templates in prototypes.",
+  "license": "ISC",
+  "author": "David McClelland",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}

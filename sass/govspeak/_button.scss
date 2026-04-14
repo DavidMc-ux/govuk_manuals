@@ -1,0 +1,10 @@
+.govspeak, // Legacy class name that's still used in some content items - needs to be kept until `.govspeak` is removed from the content items.
+.gem-c-govspeak {
+  .govuk-button {
+    margin-bottom: 32px;
+
+    @include govuk-media-query($until: tablet) {
+      margin-bottom: 22px;
+    }
+  }
+}

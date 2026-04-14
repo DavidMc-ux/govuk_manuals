@@ -1,0 +1,39 @@
+// Govspeak images
+//
+// Support:
+// - alphagov/whitehall: ✔︎
+// - alphagov/govspeak: ✔︎
+
+.govspeak, // Legacy class name that's still used in some content items - needs to be kept until `.govspeak` is removed from the content items.
+.gem-c-govspeak {
+  img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+  }
+
+  figure {
+    margin: 0 0 govuk-spacing(4) 0;
+    display: table;
+
+    &:has(img[src*=".svg"]) {
+      width: 100%;
+    }
+
+    img {
+      max-width: 100%;
+      display: table-row;
+    }
+
+    figcaption {
+      display: table-caption;
+      caption-side: bottom;
+    }
+
+    figcaption p {
+      margin: govuk-spacing(2) 0 0 0;
+      color: $govuk-secondary-text-colour;
+      @include govuk-font(19);
+    }
+  }
+}

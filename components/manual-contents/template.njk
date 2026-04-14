@@ -1,0 +1,79 @@
+<div id="manuals-frontend">
+
+{# summary area of the manual giving an overview of what the manual focuses on #}
+    <div class="gem-c-heading govuk-!-margin-bottom-4">
+        <h2 class="gem-c-heading__text govuk-heading-m">
+            Summary
+        </h2>
+    </div>
+    <p class="gem-c-lead-paragraph">
+        {%if params.summary%}
+            {{params.summary}}
+        {%else%}
+            Enter a summary for the manual
+        {%endif%}
+    </p>
+    <div class="gem-c-govspeak govuk-govspeak govuk-!-margin-bottom-0" lang="en">
+        {%if params.summaryDetail%}
+            <p>{{params.summaryDetail}}</p>
+        {%endif%}
+    </div>
+
+{# content area of manual, note different styles for internal hmrc and govuk manuals #}
+    <div class="gem-c-heading govuk-!-margin-bottom-4">
+        <h2 class="gem-c-heading__text govuk-heading-m">
+            Contents
+        </h2>
+    </div>
+
+    {#macro used to style the list items#}
+    {%- macro _contentsItem(params, item, index) %}
+        {%if params.type=='hmrc'%}
+         <li class="section-list-item">
+            <a class="govuk-link section-link" href="{{item.linkURL}}">
+                <div class="title-wrap">
+                    <div class="subsection-id">{{item.id}}</div>
+                    <div class="subsection-title-text">{{item.linkText}}</div>
+                </div>
+            </a>
+        </li>
+        {%else%}
+<li class="gem-c-document-list__item  ">
+            <div class="gem-c-document-list__item-title">
+                <a class="govuk-link gem-print-force-link-styles" href="{{item.linkURL}}">
+                    {{item.linkText}} 
+                </a>
+            </div>
+            <p class="gem-c-document-list__item-description gem-c-document-list__item-description--full-size">
+                {{item.text}}
+            </p>
+        </li>
+
+       
+        {%endif%}
+    {% endmacro -%}
+
+{%if params.type=='hmrc'%}
+<div class="subsection-collection">
+    <ol class="section-list">
+{%else%}
+<ul class="gem-c-document-list govuk-!-margin-bottom-5">
+{%endif%}
+    
+        {% for item in params.items %}
+            {% if item %}
+                {{ _contentsItem(params, item, loop.index) }}
+            {% endif %}
+        {% endfor %} 
+{%if params.type=='hmrc'%}
+    </ol>
+{%else%}
+</ul>
+{%endif%}
+
+     
+
+    <div class="gem-c-print-link govuk-!-display-none-print govuk-!-margin-bottom-3">
+        <button class="govuk-link gem-c-print-link__button" data-module="print-link">Print this page</button>
+    </div>
+</div>

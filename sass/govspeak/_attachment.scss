@@ -1,0 +1,152 @@
+// Govspeak attachment
+// https://components.publishing.service.gov.uk/component-guide/govspeak/block_attachments
+//
+// Support:
+// - alphagov/whitehall: ✔︎
+// - alphagov/govspeak: ✔︎
+
+// stylelint-disable max-nesting-depth
+@use "sass:color";
+
+.govspeak, // Legacy class name that's still used in some content items - needs to be kept until `.govspeak` is removed from the content items.
+.gem-c-govspeak {
+  $thumbnail-width: 99px;
+
+  .attachment {
+    position: relative;
+    margin: 0 0 govuk-spacing(6) 0;
+    padding: 0 0 0 ($thumbnail-width + govuk-spacing(6));
+    @include govuk-clearfix;
+
+    @include govuk-media-query($media-type: print) {
+      padding-left: 0;
+
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+
+    .attachment-thumb {
+      position: relative;
+      float: left;
+      margin-top: $govuk-border-width;
+      margin-left: -($thumbnail-width + govuk-spacing(6) - $govuk-border-width);
+      padding-bottom: govuk-spacing(3);
+
+      img,
+      svg {
+        display: block;
+        width: $thumbnail-width;
+        height: 140px;
+        background: govuk-colour("white");
+        outline: $govuk-border-width solid color.adjust(govuk-colour("black"), $alpha: -0.9);
+        box-shadow: 0 2px 2px rgba(govuk-colour("black"), .4);
+      }
+
+      svg {
+        fill: govuk-colour("mid-grey");
+        stroke: govuk-colour("mid-grey");
+      }
+
+      @include govuk-media-query($media-type: print) {
+        display: none;
+      }
+    }
+
+    .attachment-details {
+      h2 {
+        margin: 0 0 govuk-spacing(2) 0;
+        @include govuk-font($size: 27);
+      }
+
+      p {
+        margin: 0 0 govuk-spacing(2) 0;
+      }
+
+      .metadata {
+        @include govuk-font($size: 16);
+      }
+
+      .url {
+        word-break: break-word;
+        word-wrap: break-word;
+      }
+
+      .changed,
+      .references,
+      .unnumbered-paper {
+        display: block;
+      }
+
+      .preview,
+      .download {
+        @include govuk-font($size: 19);
+
+        strong {
+          font-weight: bold;
+        }
+      }
+
+      @include govuk-media-query($media-type: print) {
+        .download {
+          display: block;
+        }
+      }
+
+      .preview {
+        padding-right: govuk-spacing(3);
+      }
+
+      .opendocument-help {
+        @include govuk-font($size: 16);
+      }
+
+      .accessibility-warning {
+        word-break: break-word;
+        word-wrap: break-word;
+
+        h2 {
+          margin: 0;
+          @include govuk-font($size: 16);
+        }
+
+        @include govuk-media-query($media-type: print) {
+          .toggler {
+            display: none;
+          }
+        }
+      }
+
+      .js-hidden {
+        display: none;
+      }
+
+      // stylelint-disable declaration-no-important
+      @include govuk-media-query($media-type: print) {
+        a,
+        a:link,
+        a:link:visited {
+          color: $govuk-print-text-colour !important;
+
+          &::after {
+            display: block;
+            margin: 1mm auto;
+            font-weight: normal;
+            font-size: 12pt !important;
+          }
+        }
+      }
+      // stylelint-enable declaration-no-important
+    }
+  }
+
+  &.gem-c-govspeak--direction-rtl .attachment {
+    padding: govuk-spacing(3) ($thumbnail-width + govuk-spacing(6)) 0 0;
+
+    .attachment-thumb {
+      float: right;
+      margin-left: 0;
+      margin-right: (($thumbnail-width * -1) - govuk-spacing(3));
+    }
+  }
+}

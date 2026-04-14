@@ -1,0 +1,125 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Manual name - Page name - Guidance - GOV.UK
+{% endblock %}
+
+{# Blank header with no service name for this page #}
+{% block header %}
+<header>
+    {{govukHeader()}}
+</header>
+{% endblock %}
+
+{% block containerStart %}
+{{ govukBreadcrumbs({
+items: [
+{
+text: "Home",
+href: "#"
+},
+{
+text: "Section",
+href: "#"
+},
+{
+text: "Subsection"
+}
+]
+}) }}
+
+{% from "/components/manual-header/macro.njk"  import manualHeader %}
+{{ manualHeader({
+  manualTitle: 'Interaction design manual',
+  type: 'govuk',
+  publishDate: '1 January 2026',
+  updateDate: null
+}) }}
+
+
+{{ govukBreadcrumbs({
+    classes: "gem-c-breadcrumbs gem-c-breadcrumbs--border-bottom govuk-!-margin-bottom-6",
+items: [
+{
+text: "Back to contents",
+href: "#"
+}
+]
+}) }}
+
+{% endblock %}
+
+
+
+{% block content %}
+
+
+
+<div id="manuals-frontend" class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+        <div id="section-title" class="gem-c-heading govuk-!-margin-bottom-4">
+
+            <h1 class="gem-c-heading__text govuk-heading-l">
+                Page name
+            </h1>
+        </div>
+    </div>
+    <div class="govuk-grid-column-two-thirds">
+        <p class="gem-c-lead-paragraph">
+            How to prepare for your school's application to convert to an academy.
+        </p>
+    
+    
+    
+        {% from "govuk/components/accordion/macro.njk" import govukAccordion %}
+
+        {{ govukAccordion({
+        id: "accordion-default",
+        items: [
+        {
+        heading: {
+        text: "Writing well for the web"
+        },
+        content: {
+        html: '<p class="govuk-body">This is the content for Writing well for the web.</p>'
+        }
+        },
+        {
+        heading: {
+        text: "Writing well for specialists"
+        },
+        content: {
+        html: '<p class="govuk-body">This is the content for Writing well for specialists.</p>'
+        }
+        },
+        {
+        heading: {
+        text: "Know your audience"
+        },
+        content: {
+        html: '<p class="govuk-body">This is the content for Know your audience.</p>'
+        }
+        },
+        {
+        heading: {
+        text: "How people read"
+        },
+        content: {
+        html: '<p class="govuk-body">This is the content for How people read.</p>'
+        }
+        }
+        ]
+        }) }}
+    
+  
+
+
+</div>
+
+
+        <div class="gem-c-print-link govuk-!-display-none-print govuk-!-margin-bottom-3 govuk-grid-column-two-thirds">
+            <button class="govuk-link gem-c-print-link__button" data-module="print-link">Print this page</button>
+        </div>
+    </div>
+    {% endblock %}

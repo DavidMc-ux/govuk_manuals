@@ -1,0 +1,62 @@
+.gem-c-heading {
+  // needs to be this specific to override govuk-heading
+  .gem-c-heading__text {
+    margin: 0;
+    // improve visual layout of headings
+    // set balance as a fallback for firefox, pretty for other browsers
+    text-wrap: balance;
+    text-wrap: pretty;
+    @include govuk-text-break-word;
+  }
+}
+
+.gem-c-heading--padding {
+  padding: govuk-spacing(3) 0;
+}
+
+// border color will default to black
+// can be changed using the branding functionality
+.gem-c-heading--border-top-1 {
+  border-top-style: solid;
+  border-top-width: 1px;
+}
+
+.gem-c-heading--border-top-2 {
+  border-top-style: solid;
+  border-top-width: 2px;
+}
+
+.gem-c-heading--border-top-5 {
+  border-top-style: solid;
+  border-top-width: 5px;
+}
+
+.gem-c-heading--inverse {
+  .gem-c-heading__context,
+  .gem-c-heading__text {
+    color: govuk-colour("white");
+  }
+}
+
+// stylelint-disable declaration-no-important
+@include govuk-media-query($media-type: print) {
+  // Override margins and colors
+  .gem-c-heading {
+    margin: 0 !important;
+    color: $govuk-print-text-colour !important;
+    border-color: $govuk-print-text-colour !important;
+    padding: 0;
+  }
+
+  .gem-c-heading--padding[class*="--border-top"] {
+    padding-top: govuk-spacing(3);
+  }
+
+  .gem-c-heading--inverse {
+    .gem-c-heading__context,
+    .gem-c-heading__text {
+      color: $govuk-print-text-colour;
+    }
+  }
+}
+// stylelint-enable declaration-no-important

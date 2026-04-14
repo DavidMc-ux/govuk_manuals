@@ -1,0 +1,17 @@
+.gem-c-attachment-link__abbr {
+  text-decoration: none;
+  cursor: help;
+}
+
+// stylelint-disable declaration-no-important
+@include govuk-media-query($media-type: print) {
+  .gem-c-attachment-link .govuk-link {
+    color: $govuk-print-text-colour !important;
+
+    &::after {
+      font-size: inherit;
+      color: inherit;
+    }
+  }
+}
+// stylelint-enable declaration-no-important
