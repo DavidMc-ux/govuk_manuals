@@ -9,13 +9,10 @@
         </h1>
     </div>
 </div>
-        
-<div class="govuk-grid-column-two-thirds">
-    <p class="gem-c-lead-paragraph">
-        {% if params.sectionTitle.text %}
+{% if params.sectionTitle.text %}        
+    <div class="govuk-grid-column-two-thirds">
+        <p class="gem-c-lead-paragraph">
             {{params.sectionTitle.text}}
-        {% else %}
-            Enter a brief description of the section.
-        {%endif%}
-    </p>
-</div>
+        </p>
+    </div>
+{%endif%}
