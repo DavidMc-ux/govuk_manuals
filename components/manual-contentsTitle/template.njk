@@ -1,0 +1,29 @@
+
+
+{# summary area of the manual giving an overview of what the manual focuses on #}
+    <div class="gem-c-heading govuk-!-margin-bottom-4">
+        <h2 class="gem-c-heading__text govuk-heading-m">
+            Summary
+        </h2>
+    </div>
+    <p class="gem-c-lead-paragraph">
+        {%if params.summary%}
+            {{params.summary}}
+        {%else%}
+            Enter a summary for the manual
+        {%endif%}
+    </p>
+    <div class="gem-c-govspeak govuk-govspeak govuk-!-margin-bottom-0" lang="en">
+        {%if params.summaryDetail%}
+            <p>{{params.summaryDetail}}</p>
+        {%endif%}
+    </div>
+
+{# content area of manual, note different styles for internal hmrc and govuk manuals #}
+    <div class="gem-c-heading govuk-!-margin-bottom-4">
+        <h2 class="gem-c-heading__text govuk-heading-m">
+            Contents
+        </h2>
+    </div>
+
+

@@ -45,13 +45,16 @@ updateDate: null
 {% block content %}
 <div id="manuals-frontend" class="govuk-grid-row">
   <div class="govuk-grid-column-full">
+    {% from "/components/manual-contentsTitle/macro.njk" import manualContents %}
+    {{ manualContentsTitle({
+    summary: 'Making Tax Digital (MTD) is a government initiative designed to make it easier for individuals and
+    businesses to manage their tax affairs digitally.',
+    summaryDetail: null
+    }) }}
+
     {% from "/components/manual-contents/macro.njk" import manualContents %}
     {{ manualContents({
     type: 'hmrc',
-    summary: 'Making Tax Digital (MTD) is a government initiative designed to make it easier for individuals and
-    businesses to manage their tax affairs digitally.',
-    summaryDetail: null,
-
     items:[
     {
     id:'IDM1000',
