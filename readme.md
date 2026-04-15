@@ -12,18 +12,18 @@ Run your prototype, the GOVUK Manuals templates should be available in the Templ
 
 ## How to design your manual
 There are two types of manual used on GOV.UK:
-- HMRC internal manual (green box) see example of a HMRC internal manual - [https://www.gov.uk/hmrc-internal-manuals/pensions-tax-manual](Pensions Tax Manual)
-- GOV.UK manual (blue box) see example of a GOv.UK manual - [https://www.gov.uk/guidance/understanding-your-driving-test-result](Understanding your driving test results).
+- HMRC internal manual (green box) see example of a HMRC internal manual - [Pensions Tax Manual](https://www.gov.uk/hmrc-internal-manuals/pensions-tax-manual)
+- GOV.UK manual (blue box) see example of a GOv.UK manual - [Understanding your driving test results](https://www.gov.uk/guidance/understanding-your-driving-test-result).
 
 Both work in a similar format with a contents page linking to several section pages:
-
+```
 |-- content page
         |-- section page one
         |-- section page two
         |-- section page three
-
+```
 An HMRC internal manual can have a sub contents page to contain a sub set of section pages:
-
+```
 |-- content page
         |-- sub contents page one
         |       |-- section page 1a
@@ -32,3 +32,4 @@ An HMRC internal manual can have a sub contents page to contain a sub set of sec
         |
         |-- section page two
         |-- section page three
+```
