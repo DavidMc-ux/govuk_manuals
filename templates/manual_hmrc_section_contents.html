@@ -60,48 +60,47 @@ href: "#"
         {% from "/components/manual-sectionTitle/macro.njk" import manualSectionTitle %}
         {{ manualSectionTitle({
         sectionTitle: {
-        heading: 'Section title',
+        heading: 'section ID - section title: contents',
         text: null}
         }) }}
 
-        <div class="govuk-grid-column-full">
-            {% from "/components/manual-contents/macro.njk" import manualContents %}
-    {{ manualContents({
-    type: 'hmrc',
-    items:[
-    {
-    id:'IDM1000',
-    linkText: 'David heading',
-    linkURL: '/guidance/making-tax-digital/1-overview'
-    },
-    {
-    id:'IDM2000',
-    linkText: '2. Who needs to comply with MTD?',
-    linkURL: '/guidance/making-tax-digital/2-who-needs-to-comply'
-    }
-    ]
-    }) }}
 
+        {% from "/components/manual-contents/macro.njk" import manualContents %}
+        {{ manualContents({
+        type: 'hmrc',
+        classes: 'govuk-grid-column-full',
+        items:[
+        {
+        id:'ID1000',
+        sectionTitle: 'Section one',
+        href: '#'
+        },
+        {
+        id:'ID2000',
+        sectionTitle: 'Section two',
+        href: '#'
+        }
+        ]
+        }) }}
 
-        </div>
     </article>
     <div class="govuk-grid-column-full">
         {% from "govuk/components/pagination/macro.njk" import govukPagination %}
 
-{{ govukPagination({
-  previous: {
-    labelText: null,
-    href: "#"
-  },
-  next: {
-    labelText: null,
-    href: "#"
-  }
-}) }}
+        {{ govukPagination({
+        previous: {
+        labelText: null,
+        href: "#"
+        },
+        next: {
+        labelText: null,
+        href: "#"
+        }
+        }) }}
     </div>
-<div class="govuk-grid-column-full">
-    {% from "/components/manual-printLink/macro.njk" import manualPrintLink %}
-    {{ manualPrintLink() }}
+    <div class="govuk-grid-column-full">
+        {% from "/components/manual-printLink/macro.njk" import manualPrintLink %}
+        {{ manualPrintLink() }}
     </div>
 
 </div>

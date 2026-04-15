@@ -43,6 +43,10 @@ items: [
 {
 text: "Back to contents",
 href: "#"
+},
+{
+text: "Section ID",
+href: "#"
 }
 ]
 }) }}
@@ -60,14 +64,36 @@ href: "#"
         {% from "/components/manual-sectionTitle/macro.njk" import manualSectionTitle %}
         {{ manualSectionTitle({
         sectionTitle: {
-        heading: 'Section title',
+        heading: 'Section ID - Section title',
         text: null}
         }) }}
 
         <div class="govuk-grid-column-two-thirds">
             <p class="govuk-body">
-                This is an optional area to add details about the section. It can include any components that are available in the prototype kit.
+                This is an area to add content.
             </p>
+            <p class="govuk-body">
+                Use the <a class="govuk-link"
+                    href="https://www.gov.uk/guidance/how-to-publish-on-gov-uk/markdown">Govspeak guide for Whitehall
+                    publisher</a> to see which content components you can use. Then use the <a class="govuk-link"
+                    href="https://design-system.service.gov.uk/">GOV.UK Design System</a> to find the corresponding
+                component's html or nunjunks.
+            </p>
+            <p class="govuk-body">
+                The following components are missing from the <a class="govuk-link"
+                    href="https://design-system.service.gov.uk/">GOV.UK Design System</a>, these will be added at a
+                later date:
+            </p>
+            <ul class="govuk-list govuk-list--bullet">
+                <li><a class="govuk-link"
+                        href="https://www.gov.uk/guidance/how-to-publish-on-gov-uk/markdown#addresses">Addresses</a>
+                </li>
+                <li><a class="govuk-link"
+                        href="https://www.gov.uk/guidance/how-to-publish-on-gov-uk/markdown#call-to-action">Call to
+                        action</a></li>
+                <li><a class="govuk-link"
+                        href="https://www.gov.uk/guidance/how-to-publish-on-gov-uk/markdown#charts">Charts</a></li>
+            </ul>
 
 
         </div>
@@ -75,20 +101,20 @@ href: "#"
     <div class="govuk-grid-column-full">
         {% from "govuk/components/pagination/macro.njk" import govukPagination %}
 
-{{ govukPagination({
-  previous: {
-    labelText: null,
-    href: "#"
-  },
-  next: {
-    labelText: null,
-    href: "#"
-  }
-}) }}
+        {{ govukPagination({
+        previous: {
+        labelText: null,
+        href: "#"
+        },
+        next: {
+        labelText: null,
+        href: "#"
+        }
+        }) }}
     </div>
-<div class="govuk-grid-column-full">
-    {% from "/components/manual-printLink/macro.njk" import manualPrintLink %}
-    {{ manualPrintLink() }}
+    <div class="govuk-grid-column-full">
+        {% from "/components/manual-printLink/macro.njk" import manualPrintLink %}
+        {{ manualPrintLink() }}
     </div>
 
 </div>

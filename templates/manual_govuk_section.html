@@ -66,8 +66,30 @@ href: "#"
 
         <div class="govuk-grid-column-two-thirds">
             <p class="govuk-body">
-                This is an optional area to add details about the section. It can include any components that are available in the prototype kit.
+                This is an optional area to add details about the section.
             </p>
+            <p class="govuk-body">
+                Use the <a class="govuk-link"
+                    href="https://www.gov.uk/guidance/how-to-publish-on-gov-uk/markdown">Govspeak guide for Whitehall
+                    publisher</a> to see which content components you can use. Then use the <a class="govuk-link"
+                    href="https://design-system.service.gov.uk/">GOV.UK Design System</a> to find the corresponding
+                component's html or nunjunks.
+            </p>
+            <p class="govuk-body">
+                The following components are missing from the <a class="govuk-link"
+                    href="https://design-system.service.gov.uk/">GOV.UK Design System</a>, these will be added at a
+                later date:
+            </p>
+            <ul class="govuk-list govuk-list--bullet">
+                <li><a class="govuk-link"
+                        href="https://www.gov.uk/guidance/how-to-publish-on-gov-uk/markdown#addresses">Addresses</a>
+                </li>
+                <li><a class="govuk-link"
+                        href="https://www.gov.uk/guidance/how-to-publish-on-gov-uk/markdown#call-to-action">Call to
+                        action</a></li>
+                <li><a class="govuk-link"
+                        href="https://www.gov.uk/guidance/how-to-publish-on-gov-uk/markdown#charts">Charts</a></li>
+            </ul>
 
             {% from "govuk/components/accordion/macro.njk" import govukAccordion %}
 
@@ -110,9 +132,9 @@ href: "#"
             }) }}
         </div>
     </article>
-<div class="govuk-grid-column-two-thirds">
-    {% from "/components/manual-printLink/macro.njk" import manualPrintLink %}
-    {{ manualPrintLink() }}
+    <div class="govuk-grid-column-two-thirds">
+        {% from "/components/manual-printLink/macro.njk" import manualPrintLink %}
+        {{ manualPrintLink() }}
     </div>
 
 </div>

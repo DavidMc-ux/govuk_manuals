@@ -7,18 +7,18 @@
     {%- macro _contentsItem(params, item, index) %}
         {%if params.type=='hmrc'%}
          <li class="section-list-item">
-            <a class="govuk-link section-link" href="{{item.linkURL}}">
+            <a class="govuk-link section-link" href="{{item.href}}">
                 <div class="title-wrap">
                     <div class="subsection-id">{{item.id}}</div>
-                    <div class="subsection-title-text">{{item.linkText}}</div>
+                    <div class="subsection-title-text">{{item.sectionTitle}}</div>
                 </div>
             </a>
         </li>
         {%else%}
 <li class="gem-c-document-list__item  ">
             <div class="gem-c-document-list__item-title">
-                <a class="govuk-link gem-print-force-link-styles" href="{{item.linkURL}}">
-                    {{item.linkText}} 
+                <a class="govuk-link gem-print-force-link-styles" href="{{item.href}}">
+                    {{item.sectionTitle}} 
                 </a>
             </div>
             <p class="gem-c-document-list__item-description gem-c-document-list__item-description--full-size">
@@ -31,10 +31,10 @@
     {% endmacro -%}
 
 {%if params.type=='hmrc'%}
-<div class="subsection-collection">
+<div class="subsection-collection {%if params.classes%}{{params.classes}}{%endif%}">
     <ol class="section-list">
 {%else%}
-<ul class="gem-c-document-list govuk-!-margin-bottom-5">
+<ul class="gem-c-document-list govuk-!-margin-bottom-5 {%if params.classes%}{{params.classes}}{%endif%}">
 {%endif%}
     
         {% for item in params.items %}

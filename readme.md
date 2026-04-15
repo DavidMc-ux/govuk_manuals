@@ -9,3 +9,26 @@ GOVUK Manuals plugin contains the code and templates to recreate 'hmrc internal'
 5. Run `npm install [path]` where `[path]` is the path to the plugin `govuk_manuals`, for example `~/Documents/projects/prototype-plugins/govuk_manuals`.
 
 Run your prototype, the GOVUK Manuals templates should be available in the Templates section of Manage your prototype.
+
+## How to design your manual
+There are two types of manual used on GOV.UK:
+- HMRC internal manual (green box) see example of a HMRC internal manual - [https://www.gov.uk/hmrc-internal-manuals/pensions-tax-manual](Pensions Tax Manual)
+- GOV.UK manual (blue box) see example of a GOv.UK manual - [https://www.gov.uk/guidance/understanding-your-driving-test-result](Understanding your driving test results).
+
+Both work in a similar format with a contents page linking to several section pages:
+
+|-- content page
+        |-- section page one
+        |-- section page two
+        |-- section page three
+
+An HMRC internal manual can have a sub contents page to contain a sub set of section pages:
+
+|-- content page
+        |-- sub contents page one
+        |       |-- section page 1a
+        |       |-- section page 1b
+        |       |-- section page 1c
+        |
+        |-- section page two
+        |-- section page three

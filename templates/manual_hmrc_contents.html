@@ -45,10 +45,9 @@ updateDate: null
 {% block content %}
 <div id="manuals-frontend" class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    {% from "/components/manual-contentsTitle/macro.njk" import manualContents %}
+    {% from "/components/manual-contentsTitle/macro.njk" import manualContentsTitle %}
     {{ manualContentsTitle({
-    summary: 'Making Tax Digital (MTD) is a government initiative designed to make it easier for individuals and
-    businesses to manage their tax affairs digitally.',
+    summary: 'Brief summary explaining the purpose of the manual and what the user can expect to find in it.',
     summaryDetail: null
     }) }}
 
@@ -57,14 +56,24 @@ updateDate: null
     type: 'hmrc',
     items:[
     {
-    id:'IDM1000',
-    linkText: 'David heading',
-    linkURL: '/guidance/making-tax-digital/1-overview'
+    id:'ID1000',
+    sectionTitle: 'Section one',
+    href: '#'
     },
     {
-    id:'IDM2000',
-    linkText: '2. Who needs to comply with MTD?',
-    linkURL: '/guidance/making-tax-digital/2-who-needs-to-comply'
+    id:'ID2000',
+    sectionTitle: 'Section two',
+    href: '#'
+    },
+    {
+    id:'ID3000',
+    sectionTitle: 'Section three',
+    href: '#'
+    },
+    {
+    id:'ID2400',
+    sectionTitle: 'Section four',
+    href: '#'
     }
     ]
     }) }}

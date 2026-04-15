@@ -120,33 +120,28 @@
   ],
   "templates": [
     {
-      "name": "Detailed guide",
-      "path": "/templates/detailed_guide.html",
-      "type": "nunjucks"
-    },
-    {
-      "name": "Manual-GOVUK contents",
+      "name": "GOV.UK Manual: contents page",
       "path": "/templates/manual_govuk_contents.html",
       "type": "nunjucks"
     },
-     {
-      "name": "Manual-HMRC contents",
-      "path": "/templates/manual_hmrc_contents.html",
-      "type": "nunjucks"
-    },
     {
-      "name": "Manual-GOVUK section",
+      "name": "GOV.UK Manual: section page",
       "path": "/templates/manual_govuk_section.html",
       "type": "nunjucks"
     },
     {
-      "name": "Manual-HMRC section",
-      "path": "/templates/manual_hmrc_section.html",
+      "name": "HMRC Manual: contents page",
+      "path": "/templates/manual_hmrc_contents.html",
       "type": "nunjucks"
     },
     {
-      "name": "Manual-HMRC section with contents",
+      "name": "HMRC Manual: sub contents page",
       "path": "/templates/manual_hmrc_section_contents.html",
+      "type": "nunjucks"
+    },
+    {
+      "name": "HMRC Manual: section page",
+      "path": "/templates/manual_hmrc_section.html",
       "type": "nunjucks"
     }
   ]
