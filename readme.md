@@ -37,3 +37,10 @@ An HMRC internal manual can have a sub contents page to contain a sub set of sec
         |-- section page three
 ```
 
+### Add content to your manual
+Use the [Govspeak guide for Whitehall publisher](https://www.gov.uk/guidance/how-to-publish-on-gov-uk/markdown) to see which content components you can use. Then use the [GOV.UK Design System](https://design-system.service.gov.uk/) to find the corresponding component's html or nunjunks.
+
+The following Whitehall components are missing from the GOV.UK Design System, these will be added at a later date to this plugin:
+- Addresses
+- Call to action
+- Charts
