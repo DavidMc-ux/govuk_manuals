@@ -76,20 +76,23 @@ href: "#"
                 component's html or nunjunks.
             </p>
             <p class="govuk-body">
-                The following components are missing from the <a class="govuk-link"
-                    href="https://design-system.service.gov.uk/">GOV.UK Design System</a>, these will be added at a
-                later date:
-            </p>
-            <ul class="govuk-list govuk-list--bullet">
-                <li><a class="govuk-link"
-                        href="https://www.gov.uk/guidance/how-to-publish-on-gov-uk/markdown#addresses">Addresses</a>
-                </li>
-                <li><a class="govuk-link"
-                        href="https://www.gov.uk/guidance/how-to-publish-on-gov-uk/markdown#call-to-action">Call to
-                        action</a></li>
-                <li><a class="govuk-link"
-                        href="https://www.gov.uk/guidance/how-to-publish-on-gov-uk/markdown#charts">Charts</a></li>
-            </ul>
+                There will be Whitehall components that are missing from the <a class="govuk-link"
+                    href="https://design-system.service.gov.uk/">GOV.UK Design System</a>. I have added these as nunjunks components and documented on how to use them in the readme file of the <a class="govuk-link"
+                    href="https://github.com/DavidMc-ux/govuk_manuals">govuk_manuals</a> github repository. </p>
+           
+
+
+            {% from "/components/govspeak/call-to-action/macro.njk" import govspeakCallToAction %}
+            {{ govspeakCallToAction(
+            {
+            html: '<p class="govuk-body">This is a <a class="govuk-link"
+                    href="https://www.gov.uk/guidance/how-to-publish-on-gov-uk/markdown#call-to-action">call to
+                    action</a> component.</p>
+            <p class="govuk-body">It is used to highlight <strong>important information</strong> or actions that users
+                should take. You can use it to draw attention to key messages or prompts within your content.</p> '
+            }) }}
+
+
 
             {% from "govuk/components/accordion/macro.njk" import govukAccordion %}
 

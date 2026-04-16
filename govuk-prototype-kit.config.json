@@ -9,6 +9,8 @@
     "/images/"
   ],
   "sass": [
+    "/sass/govspeak/contact",
+    "/sass/govspeak/call-to-action",
     "/sass/manuals/section-list",
     "/sass/helpers/brand-colours",
     "/sass/helpers/colours",
@@ -116,6 +118,14 @@
     {
       "macroName": "manualPrintLink",
       "importFrom": "/components/manual-printLink/macro.njk"
+    },
+    {
+      "macroName": "govspeakCallToAction",
+      "importFrom": "/components/govspeak/call-to-action/macro.njk"
+    },
+    {
+      "macroName": "govspeakAddress",
+      "importFrom": "/components/govspeak/address/macro.njk"
     }
   ],
   "templates": [

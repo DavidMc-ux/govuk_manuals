@@ -1,0 +1,13 @@
+{%if params.text or params.html%}
+    <div class="gem-c-govspeak">
+        <div class="call-to-action">
+            {%if params.html%}
+                {{params.html | trim | safe }}
+            {%elif params.text%}
+                <p>
+                    {{params.text | trim }}
+                </p>
+            {%endif%}
+        </div>
+    </div>
+{%endif%}
