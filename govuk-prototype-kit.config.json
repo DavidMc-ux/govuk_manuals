@@ -101,31 +101,31 @@
   "nunjucksMacros": [
     {
       "macroName": "manualHeader",
-      "importFrom": "/components/manual-header/macro.njk"
+      "importFrom": "components/manual-header/macro.njk"
     },
     {
       "macroName": "manualSectionTitle",
-      "importFrom": "/components/manual-sectionTitle/macro.njk"
+      "importFrom": "components/manual-sectionTitle/macro.njk"
     },
     {
       "macroName": "manualContents",
-      "importFrom": "/components/manual-contents/macro.njk"
+      "importFrom": "components/manual-contents/macro.njk"
     },
     {
       "macroName": "manualContentsTitle",
-      "importFrom": "/components/manual-contentsTitle/macro.njk"
+      "importFrom": "components/manual-contentsTitle/macro.njk"
     },
     {
       "macroName": "manualPrintLink",
-      "importFrom": "/components/manual-printLink/macro.njk"
+      "importFrom": "components/manual-printLink/macro.njk"
     },
     {
       "macroName": "govspeakCallToAction",
-      "importFrom": "/components/govspeak/call-to-action/macro.njk"
+      "importFrom": "components/govspeak/call-to-action/macro.njk"
     },
     {
       "macroName": "govspeakAddress",
-      "importFrom": "/components/govspeak/address/macro.njk"
+      "importFrom": "components/govspeak/address/macro.njk"
     }
   ],
   "templates": [
